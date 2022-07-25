@@ -1,24 +1,24 @@
 # https://stackabuse.com/courses/graphs-in-python-theory-and-implementation/lessons/minimum-spanning-trees-boruvkas-algorithm/#borvkasalgorithm
 # class Graph:
-    def __init__(self, num_of_nodes):
+def __init__(self, num_of_nodes):
         self.m_v = num_of_nodes
         self.m_edges = []
         self.m_component = {}
         
         
         
-    def add_edge(self, u, v, weight):
+def add_edge(self, u, v, weight):
             self.m_edges.append([u, v, weight])
     
     
     
     
-    def find_component(self, u):
+def find_component(self, u):
         if self.m_component[u] == u:
             return u
         return self.find_component(self.m_component[u])
 
-    def set_component(self, u):
+def set_component(self, u):
         if self.m_component[u] == u:
             return
         else:
@@ -27,7 +27,7 @@
             
             
             
-    def union(self, component_size, u, v):
+def union(self, component_size, u, v):
         if component_size[u] <= component_size[v]:
             self.m_component[u] = v
             component_size[v] += component_size[u]
@@ -42,7 +42,7 @@
         
         
         
-    def boruvka(self):
+def boruvka(self):
         component_size = []
         mst_weight = 0
 
